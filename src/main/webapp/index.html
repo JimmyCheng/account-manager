@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The Spring-WS/Spring REST example</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link type="image/x-icon" href="static/images/favicon.ico" rel="shortcut icon">
+<link href="static/bootstrap/2.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />
+<link href="static/styles/default.css" type="text/css" rel="stylesheet" />
+<script src="static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<script src="static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="header">
+			<div id="title">
+				<h1>
+					The Spring Example<small>--REST & MVC</small>
+				</h1>
+			</div>
+		</div>
+
+		<div id="content">
+			<h2>Spring MVC</h2>
+			<a
+				href="http://localhost:8080/account-manager/account/">Spring
+				MVC</a> <br> Provide a web interface. <br>
+
+			<h2>Spring WS</h2>
+			<a
+				href="http://localhost:8080/account-manager/wsdl/accountService-v1.0.wsdl">Spring
+				Web Service</a> <br> Please input this wsdl address in SOAPUI to
+			operate on the service. <br>
+
+			<h2>Spring REST</h2>
+
+			<h4>Search API</h4>
+			<ul>
+				<li>Get All the accounts <a
+					href="http://localhost:8080/account-manager/api/v1/account">http://localhost:8080/account-manager/api/v1/account</a></li>
+				<li>Get the specific account(id=1)<a
+					href="http://localhost:8080/account-manager/api/v1/account/1">http://localhost:8080/account-manager/api/v1/account/1</a></li>
+			</ul>
+
+			<h4>Modification API</h4>
+			<ul>
+				<li>Create
+					Account：http://localhost:8080/account-manager/api/v1/account
+					method=Post, consumes=JSON</li>
+				<li>Update
+					Account(id=1001)：http://localhost:8080/account-manager/api/v1/account
+					method=Put, consumes=JSON</li>
+				<li>Delete
+					Account(id=1001)：http://localhost:8080/account-manager/api/v1/account/1
+					method=Delete, consumes=JSON</li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			Copyright &copy; 2014 <a href="http://www.jeecourse.com">jeecourse.com</a>
+		</div>
+	</div>
+	
+	<script src="/static/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>

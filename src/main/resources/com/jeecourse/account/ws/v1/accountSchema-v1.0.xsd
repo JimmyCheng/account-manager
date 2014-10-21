@@ -1,0 +1,60 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns:tns="http://www.jeecourse.com/account/v1"
+	targetNamespace="http://www.jeecourse.com/account/v1">
+	<complexType name="AccountReq">
+		<sequence>
+			<element name="Name" type="string" />
+			<element name="Age" type="int" />
+		</sequence>
+	</complexType>
+
+	<complexType name="AccountRsp">
+		<complexContent>
+			<extension base="tns:AccountReq">
+				<sequence>
+					<element name="ID" type="long" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="Accounts">
+		<sequence>
+			<element name="accounts" type="tns:AccountRsp" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="paginationInfo">
+		<sequence>
+			<element name="fromItem" type="int" />
+			<element name="maxItems" type="int" />
+		</sequence>
+	</complexType>
+
+	<element name="createAccountRequest" type="tns:AccountReq" />
+	<element name="createAccountResponse" type="tns:AccountRsp" />
+
+	<element name="getAccountRequest" type="long" />
+	<element name="getAccountResponse" type="tns:AccountRsp" />
+
+	<element name="getAccountsRequest" type="tns:paginationInfo" />
+	<element name="getAccountsResponse" type="tns:Accounts" />
+
+	<element name="updateAccountRequest" type="tns:AccountReq" />
+	<element name="updateAccountResponse" type="tns:empty" />
+
+	<element name="deleteAccountRequest" type="long" />
+	<element name="deleteAccountResponse" type="tns:empty" />
+
+	<element name="wsException">
+		<complexType>
+			<sequence>
+				<element name="errorCode" type="int" />
+				<element name="message" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="empty">
+		<sequence />
+	</complexType>
+</schema>
